@@ -1,0 +1,36 @@
+-- creating students table
+CREATE TABLE students (
+  student_id SERIAL PRIMARY KEY,
+  first_name VARCHAR(50),
+  last_name VARCHAR(50),
+  subjects VARCHAR(50)
+);
+
+-- Populate students table
+INSERT INTO students (first_name,last_name,subjects)
+VALUES ('Alice', 'Smith', 'Physics'),
+       ('Faisal', 'Salum', 'Math'),
+       ('Prince', 'Dube', 'Chemistry'),
+       ('Pascal', 'Msindo', 'Geograpghy'),
+       ('Yeison', 'Fuentes', 'Language'),
+       ('Franklin', 'Navaro', 'Geography'),
+       ('Yahaya', 'Zaid', 'Chemistry'),
+       ('Cheikh', 'Sidibe', 'Language'),
+       ('Sospeter', 'Bajana', 'Math'),
+       ('Yanick', 'Bangala', 'Physics');
+
+
+-- Query students table by using SELECT and FROM Clauses
+-- By using * we can query all data in students table
+SELECT *
+FROM students;
+
+-- You can use SELECT clause to query specific column (s)
+SELECT first_name,last_name
+FROM students;
+
+
+-- Use WHERE clause to filter students who study Physics subject
+SELECT first_name,last_name
+FROM students
+WHERE subjects = 'Physics';
