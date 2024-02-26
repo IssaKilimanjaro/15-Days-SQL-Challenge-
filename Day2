@@ -1,4 +1,4 @@
--- Creating students table
+-- Creating customers table
 CREATE TABLE customers (
        customer_id SERIAL PRIMARY KEY,
        first_name VARCHAR(50),
@@ -6,7 +6,7 @@ CREATE TABLE customers (
 );
 
 
--- Populate students table
+-- Populate customers table
 
 INSERT INTO customers (first_name, last_name)
 
@@ -33,69 +33,6 @@ CREATE TABLE Orders (
 );
 
 
-
--- Populate orders table
-
-INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount)
-
--- Creating students table
-
-CREATE TABLE customers (
-
-	customer_id SERIAL PRIMARY KEY,
-
-	first_name VARCHAR(50),
-
-	last_name VARCHAR(50) 
-
-);
-
-
-
--- Populate students table
-
-INSERT INTO customers (first_name, last_name)
-
-VALUES ('Alice', 'Smith'),
-
-		('Faisal', 'Salum'),
-
-		('Prince', 'Dube'),
-
-		('Pascal', 'Msindo'),
-
-		('Yeison', 'Fuentes'),
-
-		('Franklin', 'Navaro'),
-
-		('Yahaya', 'Zaid'),
-
-		('Cheikh', 'Sidibe'),
-
-		('Sospeter', 'Bajana'),
-
-		('Yanick', 'Bangala');
-
-		
-
--- create orders table
-
-CREATE TABLE Orders (
-
-    OrderID INT PRIMARY KEY,
-
-    CustomerID INT,
-
-    OrderDate DATE,
-
-    TotalAmount DECIMAL(10, 2),
-
-    FOREIGN KEY (CustomerID) REFERENCES Customers(customer_id)
-
-);
-
-
-
 -- Populate orders table
 
 INSERT INTO Orders (OrderID, CustomerID, OrderDate, TotalAmount)
@@ -108,21 +45,17 @@ VALUES (101, 1, ‘2024-02-25’, 150.00),
 
        (104, 3, ‘2024-02-28’, 300.75)
 
-	   (105, 4, ‘2024-02-29’, 45.25),
+       (105, 4, ‘2024-02-29’, 45.25),
 
-	   (106, 1, ‘2024-03-01’, 59.75),
+       (106, 1, ‘2024-03-01', 75.75),
 
-	   (107, 5, ‘2024-03-02’, 80.00),
+       (107, 5, ‘2024-03-02’, 80.00),
 
-	   (108, 1, ‘2024-03-02’, 125.75),
+       (108, 1, ‘2024-03-02’, 125.75),
 
-	   (109, 1, ‘2024-03-03’, 65.75),
+       (109, 1, ‘2024-03-03’, 65.75),
 
-	   (110, 3, ‘2024-03-04’, 205.25);
-
-
-
-
+       (110, 3, ‘2024-03-04’, 205.25);
 
 		
 
@@ -172,61 +105,12 @@ FROM orders;
 
 
 
--- Minimum total amount
+-- Calculate Minimum total amount
 
 SELECT MIN(TotalAmount) as MinimumTotalAmount
 
 FROM orders;
 
-￼EnterVALUES (101, 1, ‘2024-02-25’, 150.00),
-
-       (102, 2, ‘2024-02-26’, 200.50),
-
-       (103, 1, ‘2024-02-27’, 75.25),
-
-       (104, 3, ‘2024-02-28’, 300.75)
-
-	   (105, 4, ‘2024-02-29’, 45.25),
-
-	   (106, 1, ‘2024-03-01’, 59.75),
-
-	   (107, 5, ‘2024-03-02’, 80.00),
-
-	   (108, 1, ‘2024-03-02’, 125.75),
-
-	   (109, 1, ‘2024-03-03’, 65.75),
-
-	   (110, 3, ‘2024-03-04’, 205.25);
-
-
-
-
-
-		
-
-ry customers table by using to see all data
-
-SELECT *
-
-FROM customers;
-
-
-
--- Query orders table to see all data in the table
-
-SELECT *
-
-FROM orders;
-
-
-
--- joining customers and orders table
-
-SELECT orders.orderID, customers.last_name, orders.orderDate
-
-FROM orders
-
-INNER JOIN customers ON orders.customerID = customers.customersID;
 
 
 
