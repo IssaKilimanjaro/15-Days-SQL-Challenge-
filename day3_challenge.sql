@@ -7,7 +7,7 @@ CREATE TABLE clients (
 );
 
 -- Populate clients table
-INSERT INTO clients (client_name, sector, fees )
+INSERT INTO clients (client_name, sport, fees )
 VALUES ('Declan Rice', 'Football', 45000.00),
 		('Lebron James', 'Basketball', 120000.00),
 		('Shakur Stevenson', 'Boxing', 50000.00),
@@ -27,9 +27,9 @@ from clients;
 -- filtering by using where
 SElECT client_name
 FROM clients
-WHERE sector = 'Boxing';
+WHERE sport = 'Boxing';
 
 -- Filter data by using HAVING Clause
 SELECT sector, AVG(fees)
 FROM clients
-GROUP BY sector HAVING AVG(fees) > 50000.00;
+GROUP BY sport HAVING AVG(fees) > 50000.00;
