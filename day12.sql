@@ -1,4 +1,4 @@
-
+-- i used data from day 3 challenge
 SELECT * 
 FROM clients;
 
